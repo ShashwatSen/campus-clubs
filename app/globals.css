@@ -1,4 +1,4 @@
-/* Colours are already defined. Use them with var(...) */
+
 :root {
   --brand: #4f46e5;
   --ink: #1f2937;
@@ -20,13 +20,37 @@ body {
 }
 
 /* TODO (Task 3b): style the navbar, the card row and the cards as described in the brief */
-
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: var(--brand);
+}
+.links {
+  display: flex;
+  gap: 16px;
+}
+.card-row {
+  display: flex;
+  gap: 16px;
+}
+.card {
+  flex: 1;
+  padding: 16px;
+  border: 1px solid var(--soft);
+  margin: 8px;
+}
 /* Existing rule: it greys every paragraph inside a card */
 .card p {
   color: var(--soft);
 }
 
 /* TODO (Task 3b): make the members line brand-coloured (without !important) */
+.card .members {
+  color: var(--brand);
+  font-weight: bold;
+}
 
 .filters {
   display: flex;

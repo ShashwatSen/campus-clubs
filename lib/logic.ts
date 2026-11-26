@@ -1,19 +1,19 @@
-import { Club, Category } from "./types";
+import { Club, Category, describeMembers } from "./types";
 
 // TODO (Task 2): replace each placeholder body with the real logic from the brief.
 
 export function getClubsByCategory(clubs: Club[], category: Category): Club[] {
-  return [];
+  return clubs.filter(club => club.category === category);
 }
 
 export function totalMembers(clubs: Club[]): number {
-  return 0;
+  return clubs.reduce((total, club) => total + club.members, 0);
 }
 
 export function clubSummary(club: Club): string {
-  return "";
+  return `${club.name} (${club.category}): ${describeMembers(club.members)} members`;
 }
 
 export function getClubById(clubs: Club[], id: number): Club | null {
-  return null;
+  return clubs.find(club => club.id === id) || null;
 }
